@@ -1,0 +1,119 @@
+////http://informatics.mccme.ru/mod/statements/view3.php?id=298&chapterid=1014#1
+//#define _CRT_SECURE_NO_WARNINGS
+//
+//#include <iostream>
+//#include <sstream>
+//#include <fstream>
+//#include <iomanip>
+//#include <string>
+//#include <algorithm>
+//#include <cmath>
+//#include <ctime>
+//#include <vector>
+//#include <stack>
+//#include <map>
+//#include <set>
+//#include <queue>
+//#include <cstring>
+//#include <bitset>
+//#include <cstdio>
+//#include <cstdlib>
+//#include <cassert>
+//
+//using namespace std;
+//
+//typedef long long ll;
+//typedef double db;
+//typedef long double ldb;
+//typedef string str;
+//
+//#define forn(i, n) for(int i = 0; i < n; ++i)
+//#define INF 1e+9
+//#define EPS 1e-9
+//#define PI 3.1415926535897932384626433832795
+//#define mp(a, b) make_pair(a, b)
+//#define pb(a) push_back(a)
+//#define X first
+//#define Y second
+//#define ms(x) memset(x, 0, sizeof(x))
+//#define ms1(x) memset(x, -1, sizeof(x))
+//#define sz(x) ( (int) x.size() )
+//#define len(x) ( (int) x.length() )
+//#define ALL(x) x.begin(), x.end()
+//#define pii pair<int, int>
+//#define pll pair<ll, ll>
+//#define pdd pair<double, double>
+//
+//const int maxn = 210;
+//int dp[maxn][maxn][maxn];
+//
+//int rec(int a1, int a2, int a3) {
+//    if (a1 < 0 || a2 < 0 || a3 < 0) return true;
+//    if (a1 == 0 && a2 == 0 && a3 == 0) return false;
+//    if (dp[a1][a2][a3] != -1) return dp[a1][a2][a3];
+//
+//    bool ok = false;
+//
+//    ok |= !rec(a1 - 1, a2, a3);
+//    ok |= !rec(a1, a2 - 1, a3);
+//    ok |= !rec(a1, a2, a3 - 1);
+//
+//    ok |= !rec(a1 + 1, a2 - 1, a3);
+//    ok |= !rec(a1 + 1, a2, a3 - 1);
+//    ok |= !rec(a1, a2 + 1, a3 - 1);
+//
+//    return dp[a1][a2][a3] = ok;
+//
+//}
+//
+//void update(vector<pii> &ans, int a1, int a2, int a3, pii val) {
+//    if (a1 < 0 || a2 < 0 || a3 < 0) return;
+//    if (!dp[a1][a2][a3]) {
+//        ans.push_back(val);
+//    }
+//}
+//
+//void solve() {
+//    ms1(dp);
+//    int n, m;
+//    scanf("%d%d", &n, &m);
+//    dp[0][0][0] = 0;
+//    rec(0, n, m);
+//    if (dp[0][n][m]) {
+//        cout << 1 << "\n";
+//        vector<pii> arr;
+////        ok |= !rec(a1 - 1, a2, a3);
+////        ok |= !rec(a1, a2 - 1, a3);
+////        ok |= !rec(a1, a2, a3 - 1);
+////
+////        ok |= !rec(a1 + 1, a2 - 1, a3);
+////        ok |= !rec(a1 + 1, a2, a3 - 1);
+////        ok |= !rec(a1, a2 + 1, a3 - 1);
+//        update(arr, 0, n - 1, m, mp(2, 2));
+//        update(arr, 0, n, m - 1, mp(3, 3));
+//        update(arr, 1, n - 1, m, mp(2, 1));
+//        update(arr, 1, n, m - 1, mp(3, 2));
+//        update(arr, 0, n + 1, m - 1, mp(3, 1));
+//        cout << sz(arr) << "\n";
+//        for(pii x : arr) {
+//            cout << x.X << " " << x.Y << "\n";
+//        }
+//    } else {
+//        cout << 2 << "\n";
+//    }
+//}
+//
+//int main() {
+//#ifdef _DEBUG
+//    freopen("input.txt", "r", stdin);
+//	//freopen("output.txt", "w", stdout);
+//#else
+//    //freopen("input.txt", "r", stdin);
+//    /*freopen("output.txt", "w", stdout);*/
+//#endif
+//    solve();
+//#ifdef _DEBUG
+//    cout << fixed << setprecision(15) << clock() * 1. / CLOCKS_PER_SEC;
+//#endif
+//    return 0;
+//}
