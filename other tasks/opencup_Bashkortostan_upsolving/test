@@ -1,0 +1,60 @@
+%
+%#include <iostream>
+%#include <sstream>
+%#include <fstream>
+%#include <iomanip>
+%#include <string>
+%#include <algorithm>
+%#include <cmath>
+%#include <ctime>
+%#include <vector>
+%#include <stack>
+%#include <map>
+%#include <set>
+%#include <queue>
+%#include <cstring>
+%#include <bitset>
+%#include <cstdio>
+%#include <cstdlib>
+%#include <cassert>
+%
+%
+%using namespace std;
+%
+%int count(int x) {
+%    int ans = 0;
+%    while(x) ans += x % 10, x /= 10;
+%    return ans;
+%}
+%void solve() {
+%    int a = 100, b = 999;
+%    int ans = 0;
+%    int need = 15;
+%    for(int i = a; i <= b; ++i) {
+%        int cur = count(i);
+%        if (cur == need)
+%            ans++;
+%    }
+%    cout << ans << "\n";
+%}
+%
+%bool check(int x) {
+%    int l = x / 1000;
+%    int r = x % 1000;
+%    return count(l) == count(r);
+%}
+%
+%void count() {
+%    int ans = 0;
+%    for(int i = 1e+5; i < 1e+6; ++i) {
+%        ans += check(i);
+%    }
+%    cout << ans << "\n";
+%
+%    cout << fixed << setprecision(15) << clock() * 1. / CLOCKS_PER_SEC;
+%}
+%
+%int main() {
+%    count();
+%    return 0;
+%}
